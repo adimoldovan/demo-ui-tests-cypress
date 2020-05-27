@@ -1,9 +1,7 @@
 /// <reference types="cypress" />
 
-
-
 describe('Authentication spec', () => {
-    it('I can login', () => {
+    it('Normal user can login', () => {
         cy.visit('')
 
         cy.get("span > button.btn-link").click()

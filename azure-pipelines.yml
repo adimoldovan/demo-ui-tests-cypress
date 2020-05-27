@@ -1,4 +1,4 @@
-name: "Automated web UI tests with Cypress"
+name: "Automated web UI tests with Cypress | $(Date:yyyyMMdd)$(Rev:.r)"
 
 stages:
   - stage: tests_chrome
@@ -16,4 +16,5 @@ stages:
 
           - script: |
               npm run test
+              npm run report
             displayName: "run tests"

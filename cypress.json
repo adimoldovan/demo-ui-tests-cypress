@@ -6,5 +6,9 @@
     "pluginsFile": "src/plugins",
     "supportFile": "src/support",
     "screenshotsFolder": "out/screenshots",
-    "videosFolder": "out/videos"
+    "videosFolder": "out/videos",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
 }

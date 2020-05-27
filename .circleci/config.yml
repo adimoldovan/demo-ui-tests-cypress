@@ -10,6 +10,11 @@ jobs:
           name: "Run tests"
           command: |
             npm run test
+            npm run report
+      - store_test_results:
+          path: out/reports
+      - store_artifacts:
+          path: ./out
 
 workflows:
   commit:
