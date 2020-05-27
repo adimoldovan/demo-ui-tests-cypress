@@ -36,16 +36,8 @@ stages:
               testRunTitle: "Automated test run"
               publishRunAttachments: true
 
-          - task: CopyFiles@2
-            inputs:
-              contents: 'out/**'
-              targetFolder: $(Build.ArtifactStagingDirectory)
-          - task: PublishBuildArtifacts@1
-            inputs:
-              pathToPublish: $(Build.ArtifactStagingDirectory)
-              artifactName: MyBuildOutputs
-
           - task: PublishPipelineArtifact@1
+            displayName: "Publish test artifacts"
             inputs:
               targetPath: 'out'
               publishLocation: 'pipeline'
