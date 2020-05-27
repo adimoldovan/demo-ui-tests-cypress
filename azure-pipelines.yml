@@ -1,4 +1,4 @@
-name: "Automated web UI tests with Cypress | $(Date:yyyyMMdd)$(Rev:.r)"
+name: "Automated web UI tests with Cypress - $(Date:yyyyMMdd)$(Rev:.r)"
 
 stages:
   - stage: tests_chrome
@@ -16,6 +16,19 @@ stages:
 
           - script: |
               npm install
+            displayName: "Install dependencies"
+
+          - script: |
               npm run test
+            displayName: "Run tests"
+
+          - script: |
               npm run report
-            displayName: "run tests"
+            displayName: "Generate test reports"
+
+          - task: PublishTestResults@2
+            displayName: "Publish test results"
+            condition: succeededOrFailed()
+            inputs:
+              testRunner: JUnit
+              testResultsFiles: "**/results-*.xml"
