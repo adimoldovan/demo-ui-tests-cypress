@@ -33,5 +33,14 @@ stages:
               testRunner: JUnit
               testResultsFiles: "**/results-*.xml"
               mergeTestResults: true
-              testRunTitle: "Automated test run $(Date:yyyyMMdd)$(Rev:.r)"
+              testRunTitle: "Automated test run"
               publishRunAttachments: true
+
+          - task: CopyFiles@2
+            inputs:
+              contents: 'out/**'
+              targetFolder: $(Build.ArtifactStagingDirectory)
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: $(Build.ArtifactStagingDirectory)
+              artifactName: MyBuildOutputs
