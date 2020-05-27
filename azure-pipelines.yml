@@ -32,3 +32,6 @@ stages:
             inputs:
               testRunner: JUnit
               testResultsFiles: "**/results-*.xml"
+              mergeTestResults: true
+              testRunTitle: "Automated test run $(Date:yyyyMMdd)$(Rev:.r)"
+              publishRunAttachments: true
