@@ -44,3 +44,9 @@ stages:
             inputs:
               pathToPublish: $(Build.ArtifactStagingDirectory)
               artifactName: MyBuildOutputs
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: 'out'
+              publishLocation: 'pipeline'
+          
