@@ -1,0 +1,23 @@
+{
+  "name": "demo-ui-tests-cypress",
+  "version": "1.0.0",
+  "description": "Demo of UI automation using Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adimoldovan/demo-ui-tests-cypress.git"
+  },
+  "author": "Adrian Moldovan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adimoldovan/demo-ui-tests-cypress/issues"
+  },
+  "homepage": "https://github.com/adimoldovan/demo-ui-tests-cypress#readme",
+  "devDependencies": {
+    "cypress": "^4.7.0"
+  }
+}

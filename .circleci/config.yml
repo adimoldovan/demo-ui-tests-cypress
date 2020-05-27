@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  run-tests:
+    docker:
+      - image: cypress/browsers
+    steps:
+      - checkout
+      - run:
+          name: "Run tests"
+          command: |
+            npm run test
+
+workflows:
+  commit:
+    jobs:
+      - run-tests

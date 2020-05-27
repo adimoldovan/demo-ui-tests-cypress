@@ -1,0 +1,10 @@
+{
+    "baseUrl": "https://adimoldovan.github.io/demo-shop/#/",
+    "integrationFolder": "src/specs",
+    "fixturesFolder": "src/fixtures",
+    "componentFolder": "src/component",
+    "pluginsFile": "src/plugins",
+    "supportFile": "src/support",
+    "screenshotsFolder": "out/screenshots",
+    "videosFolder": "out/videos"
+}
