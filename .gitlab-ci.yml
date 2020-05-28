@@ -2,6 +2,7 @@ stages:
   - test
 
 run-tests:
+  when: manual
   image: cypress/browsers
   stage: test
 
@@ -10,10 +11,10 @@ run-tests:
 
   script:
     - npm run test
-  
+
   after_script:
     - npm run report
-  
+
   artifacts:
     when: always
     paths:
