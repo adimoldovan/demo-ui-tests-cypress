@@ -1,0 +1,15 @@
+image: cypress/browsers
+
+pipelines:
+  custom:
+    run-tests:
+      - step:
+          name: run tests
+          before-script:
+            - npm install
+          script:
+            - npm run test
+          after-script:
+            - npm run report
+          artifacts:
+            - out/reports/**
