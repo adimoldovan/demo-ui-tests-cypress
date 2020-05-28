@@ -20,4 +20,8 @@ jobs:
 workflows:
   commit:
     jobs:
-      - run-tests
+      - hold:
+          type: approval
+      - run-tests:
+          requires:
+            - hold
