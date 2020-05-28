@@ -1,0 +1,23 @@
+stages:
+  - test
+
+run-tests:
+  image: cypress/browsers
+  stage: test
+
+  before_script:
+    - npm install
+
+  script:
+    - npm run test
+  
+  after_script:
+    - npm run report
+  
+  artifacts:
+    when: always
+    paths:
+      - out/reports
+    reports:
+      junit:
+        - out/reports/results-*.xml
