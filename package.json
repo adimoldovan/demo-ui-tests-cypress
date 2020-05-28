@@ -8,7 +8,7 @@
     "delete:reports": "rm -rf out/* || true",
     "pretest": "npm run delete:reports",
     "test": "npx cypress run",
-    "report": "npx mochawesome-merge 'out/reports/*.json' > mochawesome_combined.json && npx marge mochawesome_combined.json -o out/reports -f test-report.html"
+    "report": "npx mochawesome-merge './out/reports/*.json' > mochawesome-report.json && npx marge mochawesome-report.json -o out/reports -f test-report.html"
   },
   "repository": {
     "type": "git",
