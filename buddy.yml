@@ -1,0 +1,45 @@
+- pipeline: "UI tests"
+  trigger_mode: "MANUAL"
+  ref_name: "master"
+  ref_type: "BRANCH"
+  trigger_condition: "ALWAYS"
+  actions:
+    - action: "Install dependencies"
+      type: "BUILD"
+      working_directory: "/buddy/demo-ui-tests-cypress"
+      docker_image_name: "cypress/base"
+      docker_image_tag: "latest"
+      execute_commands:
+        - "npm install --force"
+      cached_dirs:
+        - "/root/.cache/Cypress"
+      volume_mappings:
+        - "/:/buddy/demo-ui-tests-cypress"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "Execute tests"
+      type: "BUILD"
+      working_directory: "/buddy/demo-ui-tests-cypress"
+      docker_image_name: "cypress/base"
+      docker_image_tag: "latest"
+      execute_commands:
+        - "npm run test"
+      cached_dirs:
+        - "/root/.cache/Cypress"
+      volume_mappings:
+        - "/:/buddy/demo-ui-tests-cypress"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
+    - action: "Generate test report"
+      type: "BUILD"
+      working_directory: "/buddy/demo-ui-tests-cypress"
+      docker_image_name: "cypress/base"
+      docker_image_tag: "latest"
+      execute_commands:
+        - "npm run report"
+      cached_dirs:
+        - "/root/.cache/Cypress"
+      volume_mappings:
+        - "/:/buddy/demo-ui-tests-cypress"
+      trigger_condition: "ALWAYS"
+      shell: "BASH"
