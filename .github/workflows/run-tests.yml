@@ -15,7 +15,7 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    container: cypress/included:latest
+    container: cypress/included:3.2.0
 
     steps:
       - name: Checkout
