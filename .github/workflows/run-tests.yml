@@ -5,6 +5,12 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      testArg:
+        description: 'Test argument'
+        required: true
+        default: 'Test value'
 
 jobs:
   build:
@@ -13,7 +19,3 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: cypress-io/github-action@v1.16.1
-      - name: Install dependencies
-        run: npm ci
-      - name: Run tests
-        run: npm run test
