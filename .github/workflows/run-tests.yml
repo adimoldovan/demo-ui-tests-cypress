@@ -15,7 +15,7 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    container: cypress/included:3.2.0
+    container: cypress/browsers:node10.16.0-chrome77-ff71
 
     steps:
       - name: Checkout
@@ -27,3 +27,9 @@ jobs:
       - name: Generate reports
         if: always()
         run: npm run report
+      - name: Publish artifacts
+        if: always()
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: test-output
+          path: out
