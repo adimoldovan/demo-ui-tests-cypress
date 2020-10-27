@@ -61,3 +61,4 @@ typings/
 out
 
 mochawesome-report.json
+.idea
