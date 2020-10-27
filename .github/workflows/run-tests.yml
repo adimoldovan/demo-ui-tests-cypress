@@ -17,5 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v1.16.1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run tests
+        uses: cypress-io/github-action@v1.16.1
+      - name: Publish test results
+        uses: EnricoMi/publish-unit-test-result-action@v1.3
+        with:
+          files: out/reports/results-*.xml
+          report_individual_runs: true
