@@ -37,4 +37,4 @@ jobs:
         env:
           EMAIL: "github-actions-bot-noreply@noreply"
           USERNAME: "github-actions-bot"
-        run: sh bin/publish-reports.sh
+        run: sh publish-reports.sh
