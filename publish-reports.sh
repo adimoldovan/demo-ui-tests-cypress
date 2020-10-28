@@ -11,8 +11,8 @@ if [ -z "$USERNAME" ]; then
   echo "WARN! USERNAME not provided! Defaulting to $USERNAME"
 fi
 
-SITE_DIR="docs"
-SOURCE_DIR="out"
+SITE_DIR="docs/$GITHUB_RUN_NUMBER"
+SOURCE_DIR="out/reports"
 
 rm -rf "$SITE_DIR"
 cp -R "$SOURCE_DIR"/. "$SITE_DIR"

@@ -38,17 +38,4 @@ jobs:
         env:
           EMAIL: "github-actions-bot-noreply@noreply"
           USERNAME: "github-actions-bot"
-          SITE_DIR: "docs"
-          SOURCE_DIR: "out"
-        run: |
-          cp -R "$SOURCE_DIR"/. "$SITE_DIR/$GITHUB_RUN_ID"
-
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "There are no changes to deploy"
-          else
-            git config --local user.name "$USERNAME"
-            git config --local user.email "$EMAIL"
-            git add .
-            git commit -m "Publish test reports"
-            git push
-          fi
+        run: sh bin/publish-reports.sh
