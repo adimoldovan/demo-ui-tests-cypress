@@ -18,6 +18,8 @@ jobs:
     container: cypress/browsers:node10.16.0-chrome77-ff71
 
     steps:
+      - name: Setup
+        run: sudo apt-get upgrade firefox
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
@@ -27,13 +29,14 @@ jobs:
       - name: Generate reports
         if: always()
         run: npm run report
-      - name: Publish artifacts
+      - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v2.2.0
         with:
           name: test-output
           path: out
       - name: Publish reports
+        if: always()
         env:
           EMAIL: "github-actions-bot-noreply@noreply"
           USERNAME: "github-actions-bot"
@@ -43,7 +46,7 @@ jobs:
           cp -R "$SOURCE_DIR"/. "$SITE_DIR/$GITHUB_RUN_ID"
 
           if [ -z "$(git status --porcelain)" ]; then
-            echo "$LOG_PREFIX There are no changes to deploy"
+            echo "There are no changes to deploy"
           else
             git config --local user.name "$USERNAME"
             git config --local user.email "$EMAIL"
