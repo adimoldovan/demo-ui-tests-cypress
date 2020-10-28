@@ -14,7 +14,7 @@ fi
 SITE_DIR="docs/$GITHUB_RUN_NUMBER"
 SOURCE_DIR="out/reports"
 
-rm -rf "$SITE_DIR"
+mkdir -rf "$SITE_DIR"
 cp -R "$SOURCE_DIR"/. "$SITE_DIR"
 
 if [ -z "$(git status --porcelain)" ]; then
