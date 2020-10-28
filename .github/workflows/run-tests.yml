@@ -19,7 +19,10 @@ jobs:
 
     steps:
       - name: Setup
-        run: sudo apt-get upgrade firefox
+        run: |
+          add-apt-repository ppa:git-core/ppa
+          apt-get update
+          apt-get install git
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
