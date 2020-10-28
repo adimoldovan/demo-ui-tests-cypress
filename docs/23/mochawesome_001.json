@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-28T21:18:38.900Z",
+    "end": "2020-10-28T21:18:39.754Z",
+    "duration": 854,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "eeaebed4-81dc-4f31-a58f-42801f0ff8aa",
+      "title": "",
+      "fullFile": "src/specs/checkout.spec..js",
+      "file": "src/specs/checkout.spec..js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0761e4c6-0eb5-43ac-96aa-0be88352e237",
+          "title": "Checkout spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Guest can add a product to cart",
+              "fullTitle": "Checkout spec Guest can add a product to cart",
+              "timedOut": null,
+              "duration": 801,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('');\ncy.get(\"div.card button.btn-link\").first().click();\ncy.get(\"span.shopping_cart_badge\").should('have.text', '1');",
+              "err": {},
+              "uuid": "7886d520-e781-411f-bae4-1db64ea4b248",
+              "parentUUID": "0761e4c6-0eb5-43ac-96aa-0be88352e237",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7886d520-e781-411f-bae4-1db64ea4b248"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 801,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "out/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
