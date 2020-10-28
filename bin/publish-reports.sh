@@ -16,6 +16,7 @@ SOURCE_DIR="out"
 
 rm -rf "$SITE_DIR"
 cp -R "$SOURCE_DIR"/. "$SITE_DIR"
+echo $(pwd)
 
 if [ -z "$(git status --porcelain)" ]; then
   echo "$LOG_PREFIX There are no changes to deploy"
