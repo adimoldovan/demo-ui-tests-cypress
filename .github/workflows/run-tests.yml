@@ -15,20 +15,15 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node10.16.0-chrome77-ff71
 
     steps:
-      - name: Setup
-        run: |
-          add-apt-repository ppa:git-core/ppa
-          apt-get update
-          apt-get install git
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm ci
       - name: Run tests
-        run: npm run test
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
       - name: Generate reports
         if: always()
         run: npm run report
