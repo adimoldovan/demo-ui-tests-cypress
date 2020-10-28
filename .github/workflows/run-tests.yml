@@ -33,3 +33,8 @@ jobs:
         with:
           name: test-output
           path: out
+      - name: Publish reports
+          env:
+            EMAIL: "github-actions-bot-noreply@noreply"
+            USERNAME: "github-actions-bot"
+          run: sh bin/publish-reports.sh
