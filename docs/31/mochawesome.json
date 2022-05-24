@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-24T11:19:50.372Z",
+    "end": "2022-05-24T11:19:51.832Z",
+    "duration": 1460,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "44c7218f-8f57-47ff-aa77-1c97cb1a8257",
+      "title": "",
+      "fullFile": "src/specs/authentication.spec.js",
+      "file": "src/specs/authentication.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c9ed2c4a-267d-4369-b940-897ababc58e7",
+          "title": "Authentication spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Normal user can login",
+              "fullTitle": "Authentication spec Normal user can login",
+              "timedOut": null,
+              "duration": 1415,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('');\ncy.get(\"span > button.btn-link\").click();\ncy.get(\"#user-name\").type('dino').should('have.value', 'dino');\ncy.get(\"#password\").type('choochoo').should('have.value', 'choochoo');\ncy.get(\"button.btn-primary\").click();\ncy.get(\"a[href='#/account']\").should('have.text', 'dino');",
+              "err": {},
+              "uuid": "29981979-4e5b-479c-b31b-dc54eb18b6e9",
+              "parentUUID": "c9ed2c4a-267d-4369-b940-897ababc58e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "29981979-4e5b-479c-b31b-dc54eb18b6e9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1415,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "out/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

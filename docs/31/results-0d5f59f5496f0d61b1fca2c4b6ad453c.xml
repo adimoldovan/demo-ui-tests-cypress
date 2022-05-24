@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.4150" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-05-24T11:19:50" tests="0" file="src/specs/authentication.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Authentication spec" timestamp="2022-05-24T11:19:50" tests="1" time="1.4150" failures="0">
+    <testcase name="Authentication spec Normal user can login" time="1.4150" classname="Normal user can login">
+    </testcase>
+  </testsuite>
+</testsuites>
