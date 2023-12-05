@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.4080" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-12-05T22:18:10" tests="0" file="src/specs/checkout.spec..js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Checkout spec" timestamp="2023-12-05T22:18:10" tests="1" time="0.4080" failures="0">
+    <testcase name="Checkout spec Guest can add a product to cart" time="0.4080" classname="Guest can add a product to cart">
+    </testcase>
+  </testsuite>
+</testsuites>
